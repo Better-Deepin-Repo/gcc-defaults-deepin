@@ -1,3 +1,9 @@
+gcc-defaults (1.231-1) unstable; urgency=medium
+
+  * Breaks cpp older than 16 to avoid x86_64-linux-gnu-cpp included in cpp under 16.
+
+ -- LFRon <ronforever@qq.com>  Tue, 16 Jun 2026 11:20:40 +0800
+
 gcc-defaults (1.231) experimental; urgency=medium
 
   * Default to GCC 16.
