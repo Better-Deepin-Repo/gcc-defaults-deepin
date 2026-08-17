@@ -2,6 +2,7 @@
 Package: gcc-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (= ${version:cpp}),
   gcc-CROSS_GNU_TYPE (= ${version:gcc}),
   gcc-${pv:gcc}-multilib-CROSS_GNU_TYPE ${reqv:gcc},
@@ -17,6 +18,7 @@ Description: GNU C compiler for the CROSS_ARCH architecture
 Package: g++-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (= ${version:cpp}),
   g++-CROSS_GNU_TYPE (= ${version:gpp}),
   gcc-multilib-CROSS_GNU_TYPE (= ${version:gcc}),
@@ -31,6 +33,7 @@ Description: GNU C++ compiler for the CROSS_ARCH architecture
 Package: gobjc-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (>= ${version:cpp}),
   gobjc-CROSS_GNU_TYPE (>= ${version:gobjc}),
   gcc-multilib-CROSS_GNU_TYPE (>= ${version:cpp}),
@@ -47,6 +50,7 @@ Description: GNU Objective-C compiler for the CROSS_ARCH architecture
 Package: gobjc++-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (>= ${version:cpp}),
   gcc-multilib-CROSS_GNU_TYPE (>= ${version:cpp}),
   gobjc++-CROSS_GNU_TYPE (>= ${version:gobjcxx}),
@@ -65,6 +69,7 @@ Description: GNU Objective-C++ compiler for the CROSS_ARCH architecture
 Package: gfortran-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (= ${version:cpp}),
   gcc-multilib-CROSS_GNU_TYPE (= ${version:gcc}),
   gfortran-CROSS_GNU_TYPE (= ${version:gfort}),
@@ -82,6 +87,7 @@ Description: GNU Fortran 95 compiler for the CROSS_ARCH architecture
 Package: gccgo-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (>= ${version:cpp}),
   g++-multilib-CROSS_GNU_TYPE (>= ${version:gcc}),
   gccgo-CROSS_GNU_TYPE (>= ${version:ggo}),
@@ -98,6 +104,7 @@ Description: Go compiler (based on GCC) for the CROSS_ARCH architecture
 Package: gdc-multilib-CROSS_GNU_TYPE
 Priority: optional
 Architecture: @host_archs@
+Multi-Arch: foreign
 Depends: cpp-CROSS_GNU_TYPE (>= ${version:cpp}),
   gdc-${pv:gdc}-multilib-CROSS_GNU_TYPE ${reqv:gdc},
   gdc-CROSS_GNU_TYPE (>= ${version:gdc}),

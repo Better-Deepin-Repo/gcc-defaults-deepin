@@ -3,9 +3,9 @@ Section: devel
 Priority: standard
 Maintainer: Debian GCC Maintainers <debian-gcc@lists.debian.org>
 Uploaders: Matthias Klose <doko@debian.org>
-Standards-Version: 4.7.3
+Standards-Version: 4.7.4
 Build-Depends: m4, debhelper-compat (= 13),
-  gcc-16-base (>= 16-20260208-1~), gfortran-16:native,
+  gcc-16-base (>= 16.1.0-3~), gfortran-16:native,
   lsb-release
 Vcs-Browser: https://salsa.debian.org/toolchain-team/gcc-defaults
 Vcs-Git: https://salsa.debian.org/toolchain-team/gcc-defaults.git
@@ -394,6 +394,48 @@ Conflicts: gcc-4.9-alpha-linux-gnu,
   gcc-17-sparc64-linux-gnu [!sparc64],
   gcc-17-x86-64-linux-gnu [!amd64],
   gcc-17-x86-64-linux-gnux32 [!x32],
+  gcc-18-aarch64-linux-gnu [!arm64],
+  gcc-18-alpha-linux-gnu [!alpha],
+  gcc-18-arm-linux-gnueabi [!armel],
+  gcc-18-arm-linux-gnueabihf [!armhf],
+  gcc-18-hppa-linux-gnu [!hppa],
+  gcc-18-i686-linux-gnu [!i386],
+  gcc-18-loongarch64-linux-gnu [!loong64],
+  gcc-18-m68k-linux-gnu [!m68k],
+  gcc-18-powerpc-linux-gnu [!powerpc],
+  gcc-18-powerpc64-linux-gnu [!ppc64],
+  gcc-18-powerpc64le-linux-gnu [!ppc64el],
+  gcc-18-mips-linux-gnu [!mips],
+  gcc-18-mipsel-linux-gnu [!mipsel],
+  gcc-18-mips64-linux-gnuabi64 [!mips64],
+  gcc-18-mips64el-linux-gnuabi64 [!mips64el],
+  gcc-18-riscv64-linux-gnu [!riscv64],
+  gcc-18-s390x-linux-gnu [!s390x],
+  gcc-18-sh4-linux-gnu [!sh4],
+  gcc-18-sparc64-linux-gnu [!sparc64],
+  gcc-18-x86-64-linux-gnu [!amd64],
+  gcc-18-x86-64-linux-gnux32 [!x32],
+  gcc-19-aarch64-linux-gnu [!arm64],
+  gcc-19-alpha-linux-gnu [!alpha],
+  gcc-19-arm-linux-gnueabi [!armel],
+  gcc-19-arm-linux-gnueabihf [!armhf],
+  gcc-19-hppa-linux-gnu [!hppa],
+  gcc-19-i686-linux-gnu [!i386],
+  gcc-19-loongarch64-linux-gnu [!loong64],
+  gcc-19-m68k-linux-gnu [!m68k],
+  gcc-19-powerpc-linux-gnu [!powerpc],
+  gcc-19-powerpc64-linux-gnu [!ppc64],
+  gcc-19-powerpc64le-linux-gnu [!ppc64el],
+  gcc-19-mips-linux-gnu [!mips],
+  gcc-19-mipsel-linux-gnu [!mipsel],
+  gcc-19-mips64-linux-gnuabi64 [!mips64],
+  gcc-19-mips64el-linux-gnuabi64 [!mips64el],
+  gcc-19-riscv64-linux-gnu [!riscv64],
+  gcc-19-s390x-linux-gnu [!s390x],
+  gcc-19-sh4-linux-gnu [!sh4],
+  gcc-19-sparc64-linux-gnu [!sparc64],
+  gcc-19-x86-64-linux-gnu [!amd64],
+  gcc-19-x86-64-linux-gnux32 [!x32],
 Description: GNU C compiler (multilib files)
  This is the GNU C compiler, a fairly portable optimizing compiler for C.
  .
@@ -902,8 +944,8 @@ Architecture: alpha
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-alpha-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the alpha architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -1060,8 +1102,8 @@ Architecture: arc
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-arc-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the arc architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -1200,8 +1242,8 @@ Architecture: amd64 arm64 i386 ppc64el x32 s390x
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-x86-64-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the amd64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -1386,6 +1428,7 @@ Description: GNU Algol-68 compiler (based on GCC) for the amd64 architecture
 Package: gcc-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (= ${version:cpp}),
   gcc-x86-64-linux-gnu (= ${version:gcc}),
   gcc-${pv:gcc}-multilib-x86-64-linux-gnu ${reqv:gcc},
@@ -1401,6 +1444,7 @@ Description: GNU C compiler for the amd64 architecture
 Package: g++-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (= ${version:cpp}),
   g++-x86-64-linux-gnu (= ${version:gpp}),
   gcc-multilib-x86-64-linux-gnu (= ${version:gcc}),
@@ -1415,6 +1459,7 @@ Description: GNU C++ compiler for the amd64 architecture
 Package: gobjc-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (>= ${version:cpp}),
   gobjc-x86-64-linux-gnu (>= ${version:gobjc}),
   gcc-multilib-x86-64-linux-gnu (>= ${version:cpp}),
@@ -1431,6 +1476,7 @@ Description: GNU Objective-C compiler for the amd64 architecture
 Package: gobjc++-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (>= ${version:cpp}),
   gcc-multilib-x86-64-linux-gnu (>= ${version:cpp}),
   gobjc++-x86-64-linux-gnu (>= ${version:gobjcxx}),
@@ -1449,6 +1495,7 @@ Description: GNU Objective-C++ compiler for the amd64 architecture
 Package: gfortran-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (= ${version:cpp}),
   gcc-multilib-x86-64-linux-gnu (= ${version:gcc}),
   gfortran-x86-64-linux-gnu (= ${version:gfort}),
@@ -1466,6 +1513,7 @@ Description: GNU Fortran 95 compiler for the amd64 architecture
 Package: gccgo-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (>= ${version:cpp}),
   g++-multilib-x86-64-linux-gnu (>= ${version:gcc}),
   gccgo-x86-64-linux-gnu (>= ${version:ggo}),
@@ -1482,6 +1530,7 @@ Description: Go compiler (based on GCC) for the amd64 architecture
 Package: gdc-multilib-x86-64-linux-gnu
 Priority: optional
 Architecture: arm64 i386 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-x86-64-linux-gnu (>= ${version:cpp}),
   gdc-${pv:gdc}-multilib-x86-64-linux-gnu ${reqv:gdc},
   gdc-x86-64-linux-gnu (>= ${version:gdc}),
@@ -1499,8 +1548,8 @@ Architecture: armel
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-arm-linux-gnueabi ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the armel architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -1673,8 +1722,8 @@ Architecture: armhf amd64 i386 x32 arm64 ppc64el s390x
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-arm-linux-gnueabihf ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the armhf architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -1847,8 +1896,8 @@ Architecture: arm64 amd64 i386 x32 ppc64el s390x
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-aarch64-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the arm64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -2036,8 +2085,8 @@ Architecture: hppa
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-hppa-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the hppa architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -2192,8 +2241,8 @@ Architecture: i386 amd64 arm64 ppc64el x32 s390x
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-i686-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the i386 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -2363,6 +2412,7 @@ Description: GNU Algol-68 compiler (based on GCC) for the i386 architecture
 Package: gcc-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (= ${version:cpp}),
   gcc-i686-linux-gnu (= ${version:gcc}),
   gcc-${pv:gcc}-multilib-i686-linux-gnu ${reqv:gcc},
@@ -2378,6 +2428,7 @@ Description: GNU C compiler for the i386 architecture
 Package: g++-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (= ${version:cpp}),
   g++-i686-linux-gnu (= ${version:gpp}),
   gcc-multilib-i686-linux-gnu (= ${version:gcc}),
@@ -2392,6 +2443,7 @@ Description: GNU C++ compiler for the i386 architecture
 Package: gobjc-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (>= ${version:cpp}),
   gobjc-i686-linux-gnu (>= ${version:gobjc}),
   gcc-multilib-i686-linux-gnu (>= ${version:cpp}),
@@ -2408,6 +2460,7 @@ Description: GNU Objective-C compiler for the i386 architecture
 Package: gobjc++-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (>= ${version:cpp}),
   gcc-multilib-i686-linux-gnu (>= ${version:cpp}),
   gobjc++-i686-linux-gnu (>= ${version:gobjcxx}),
@@ -2426,6 +2479,7 @@ Description: GNU Objective-C++ compiler for the i386 architecture
 Package: gfortran-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (= ${version:cpp}),
   gcc-multilib-i686-linux-gnu (= ${version:gcc}),
   gfortran-i686-linux-gnu (= ${version:gfort}),
@@ -2443,6 +2497,7 @@ Description: GNU Fortran 95 compiler for the i386 architecture
 Package: gccgo-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (>= ${version:cpp}),
   g++-multilib-i686-linux-gnu (>= ${version:gcc}),
   gccgo-i686-linux-gnu (>= ${version:ggo}),
@@ -2459,6 +2514,7 @@ Description: Go compiler (based on GCC) for the i386 architecture
 Package: gdc-multilib-i686-linux-gnu
 Priority: optional
 Architecture: amd64 arm64 ppc64el x32 s390x
+Multi-Arch: foreign
 Depends: cpp-i686-linux-gnu (>= ${version:cpp}),
   gdc-${pv:gdc}-multilib-i686-linux-gnu ${reqv:gdc},
   gdc-i686-linux-gnu (>= ${version:gdc}),
@@ -2476,8 +2532,8 @@ Architecture: m68k
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-m68k-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the m68k architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -2616,8 +2672,8 @@ Architecture: loong64
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-loongarch64-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the loong64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -2772,8 +2828,8 @@ Architecture: powerpc
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-powerpc-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the powerpc architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -2908,6 +2964,23 @@ Description: GNU D compiler (based on GCC) for the powerpc architecture
  This is a dependency package providing the default GNU D cross-compiler
  for the powerpc architecture.
 
+Package: gm2-powerpc-linux-gnu
+Priority: optional
+Architecture: powerpc
+Multi-Arch: foreign
+Depends: cpp-powerpc-linux-gnu (= ${version:cpp}),
+  gm2-${pv:gm2}-powerpc-linux-gnu ${reqv:gm2},
+  ${misc:Depends}
+Breaks: gm2 (<< 4:13.2.0-3)
+Replaces: gm2 (<< 4:13.2.0-3)
+Description: GNU Modula-2 compiler (based on GCC) for the powerpc architecture
+ This is the GNU Modula-2 compiler, which compiles Modula-2 on platforms
+ supported by the gcc compiler. It uses the gcc backend to generate optimized
+ code.
+ .
+ This is a dependency package providing the default GNU Modula-2 cross-compiler
+ for the powerpc architecture.
+
 Package: ga68-powerpc-linux-gnu
 Priority: optional
 Architecture: powerpc
@@ -2929,8 +3002,8 @@ Architecture: ppc64
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-powerpc64-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the ppc64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -3065,6 +3138,23 @@ Description: GNU D compiler (based on GCC) for the ppc64 architecture
  This is a dependency package providing the default GNU D cross-compiler
  for the ppc64 architecture.
 
+Package: gm2-powerpc64-linux-gnu
+Priority: optional
+Architecture: ppc64
+Multi-Arch: foreign
+Depends: cpp-powerpc64-linux-gnu (= ${version:cpp}),
+  gm2-${pv:gm2}-powerpc64-linux-gnu ${reqv:gm2},
+  ${misc:Depends}
+Breaks: gm2 (<< 4:13.2.0-3)
+Replaces: gm2 (<< 4:13.2.0-3)
+Description: GNU Modula-2 compiler (based on GCC) for the ppc64 architecture
+ This is the GNU Modula-2 compiler, which compiles Modula-2 on platforms
+ supported by the gcc compiler. It uses the gcc backend to generate optimized
+ code.
+ .
+ This is a dependency package providing the default GNU Modula-2 cross-compiler
+ for the ppc64 architecture.
+
 Package: ga68-powerpc64-linux-gnu
 Priority: optional
 Architecture: ppc64
@@ -3086,8 +3176,8 @@ Architecture: ppc64el amd64 i386 x32 ppc64 arm64 s390x
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-powerpc64le-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the ppc64el architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -3275,8 +3365,8 @@ Architecture: riscv64 amd64 i386 x32 arm64 ppc64el s390x
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-riscv64-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the riscv64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -3464,8 +3554,8 @@ Architecture: s390
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-s390-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the s390 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -3638,8 +3728,8 @@ Architecture: s390x amd64 i386 x32 arm64 ppc64el
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-s390x-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the s390x architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -3812,8 +3902,8 @@ Architecture: sh4
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-sh4-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the sh4 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -3935,8 +4025,8 @@ Architecture: sparc
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-sparc-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the sparc architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -4109,8 +4199,8 @@ Architecture: sparc64
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-sparc64-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the sparc64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -4283,8 +4373,8 @@ Architecture: x32
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-x86-64-linux-gnux32 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the x32 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -4457,8 +4547,8 @@ Architecture: hurd-amd64
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-x86-64-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the hurd-amd64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -4631,8 +4721,8 @@ Architecture: hurd-i386
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-i686-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the hurd-i386 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -4805,8 +4895,8 @@ Architecture: mips
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mips-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mips architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -4979,8 +5069,8 @@ Architecture: mipsel
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsel-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsel architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -5153,8 +5243,8 @@ Architecture: mipsn32
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mips64-linux-gnuabin32 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsn32 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -5327,8 +5417,8 @@ Architecture: mipsn32el
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mips64el-linux-gnuabin32 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsn32el architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -5501,8 +5591,8 @@ Architecture: mips64
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mips64-linux-gnuabi64 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mips64 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -5675,8 +5765,8 @@ Architecture: mips64el
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mips64el-linux-gnuabi64 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mips64el architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -5849,8 +5939,8 @@ Architecture: mipsr6
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsisa32r6-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsr6 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -6023,8 +6113,8 @@ Architecture: mipsr6el
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsisa32r6el-linux-gnu ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsr6el architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -6197,8 +6287,8 @@ Architecture: mipsn32r6
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsisa64r6-linux-gnuabin32 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsn32r6 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -6371,8 +6461,8 @@ Architecture: mipsn32r6el
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsisa64r6el-linux-gnuabin32 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mipsn32r6el architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -6545,8 +6635,8 @@ Architecture: mips64r6
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsisa64r6-linux-gnuabi64 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mips64r6 architecture
  The GNU C preprocessor is a macro processor that is used automatically
@@ -6719,8 +6809,8 @@ Architecture: mips64r6el
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-mipsisa64r6el-linux-gnuabi64 ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the mips64r6el architecture
  The GNU C preprocessor is a macro processor that is used automatically

@@ -1,22 +1,20 @@
-gcc-defaults (1.231+deepin1) unstable; urgency=medium
+gcc-defaults (1.233) unstable; urgency=medium
 
-  * Breaks/Replaces cpp older than GCC 16 to allow arch-prefixed cpp
-    symlinks to move out of cpp.
+  * Really build gm2 packages for powerpc and ppc64.
 
- -- LFRon <ronforever@qq.com>  Tue, 16 Jun 2026 11:20:40 +0800
+ -- Matthias Klose <doko@debian.org>  Sun, 02 Aug 2026 16:15:39 +0200
 
-gcc-defaults (1.231) experimental; urgency=medium
+gcc-defaults (1.232) unstable; urgency=medium
 
   * Default to GCC 16.
-  * Bump standards version.
-
- -- Matthias Klose <doko@debian.org>  Thu, 05 Mar 2026 14:33:40 +0100
-
-gcc-defaults (1.230) unstable; urgency=medium
-
+  * Bump versions to 16.1 and 15.3.
   * Stop building multilibs on s390x.
+  * Build gm2 packages for powerpc and ppc64.
+  * Bump standards version.
+  * Mark all multilib packages as M-A: foreign. Closes: #1141299.
+  * Update gcc-multilib conflicts.
 
- -- Matthias Klose <doko@debian.org>  Mon, 19 Jan 2026 17:28:52 +0100
+ -- Matthias Klose <doko@debian.org>  Sat, 01 Aug 2026 20:42:34 +0200
 
 gcc-defaults (1.229) unstable; urgency=medium
 

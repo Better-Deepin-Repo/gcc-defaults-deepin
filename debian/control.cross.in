@@ -5,8 +5,8 @@ Architecture: NATIVE_ARCH @host_archs@
 Multi-Arch: foreign
 Section: interpreters
 Depends: cpp-${pv:cpp}-CROSS_GNU_TYPE ${reqv:cpp}, ${misc:Depends}
-Breaks: cpp (<< 4:16)
-Replaces: cpp (<< 4:16)
+Breaks: cpp (<< 4:13.2.0-3)
+Replaces: cpp (<< 4:13.2.0-3)
 Suggests: cpp-doc
 Description: GNU C preprocessor (cpp) for the CROSS_ARCH architecture
  The GNU C preprocessor is a macro processor that is used automatically

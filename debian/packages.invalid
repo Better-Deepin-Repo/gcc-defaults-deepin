@@ -14,8 +14,6 @@ gdc-sparc64-linux-gnu
 gdc-multilib-arm-linux-gnueabi
 gdc-multilib-sparc64-linux-gnu
 gm2-loongarch64-linux-gnu
-gm2-powerpc-linux-gnu
-gm2-powerpc64-linux-gnu
 gm2-sh4-linux-gnu
 gcobol-alpha-linux-gnu
 gcobol-arc-linux-gnu

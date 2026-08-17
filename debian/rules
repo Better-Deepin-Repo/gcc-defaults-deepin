@@ -196,8 +196,10 @@ REL_NO_1430	:= $(shell expr $(VMINOR) - 225)$(REL_EXT)
 REL_NO_1500	:= $(shell expr $(VMINOR) - 221)$(REL_EXT)
 REL_NO_1510	:= $(shell expr $(VMINOR) - 223)$(REL_EXT)
 REL_NO_1520	:= $(shell expr $(VMINOR) - 225)$(REL_EXT)
+REL_NO_1530	:= $(shell expr $(VMINOR) - 230)$(REL_EXT)
 
-REL_NO_1600	:= $(shell expr $(VMINOR) - 230)$(REL_EXT)
+REL_NO_1600	:= $(shell expr $(VMINOR) - 229)$(REL_EXT)
+REL_NO_1610	:= $(shell expr $(VMINOR) - 230)$(REL_EXT)
 
 # minimum required gcc-X.Y versions
 REQV_295	:= (>= 1:2.95.4-16)
@@ -227,8 +229,8 @@ REQV_11		:= (>= 11.3.0-4~)
 REQV_12		:= (>= 12.3.0-1~)
 REQV_13		:= (>= 13.3.0-3~)
 REQV_14		:= (>= 14.3.0-5~)
-REQV_15		:= (>= 15.2.0-2~)
-REQV_16		:= (>= 16-20260208-1~)
+REQV_15		:= (>= 15.3.0-1~)
+REQV_16		:= (>= 16.1.0-3~)
 
 # architecture dependent variables
 DEB_HOST_ARCH		:= $(shell dpkg-architecture -qDEB_HOST_ARCH)
@@ -251,46 +253,46 @@ gnat16_archs  = alpha amd64 armel armhf arm64 hppa i386 loong64 m68k powerpc ppc
 	     $(all_archs_mips)
 
 # CV_XXX is the complete version number, including the release, without epoch
-CV_CPP		:= 16-20251130-$(REL_NO_1600)
-CV_GCC		:= 16-20251130-$(REL_NO_1600)
-CV_GPP		:= 16-20251130-$(REL_NO_1600)
-CV_GOBJC	:= 16-20251130-$(REL_NO_1600)
-CV_GOBJCXX	:= 16-20251130-$(REL_NO_1600)
-CV_GFORT	:= 16-20251130-$(REL_NO_1600)
-CV_GGO		:= 16-20251130-$(REL_NO_1600)
-CV_GNAT		:= 16-20251130-$(REL_NO_1600)
-CV_GDC		:= 16-20251130-$(REL_NO_1600)
-CV_GM2		:= 16-20251130-$(REL_NO_1600)
-CV_GCOBOL	:= 16-20251130-$(REL_NO_1600)
-CV_GA68		:= 16-20251130-$(REL_NO_1600)
-CV_BRIG		:= 16-20251130-$(REL_NO_1600)
-CV_OFFL		:= 16-20251130-$(REL_NO_1600)
+CV_CPP		:= 16.1.0-$(REL_NO_1610)
+CV_GCC		:= 16.1.0-$(REL_NO_1610)
+CV_GPP		:= 16.1.0-$(REL_NO_1610)
+CV_GOBJC	:= 16.1.0-$(REL_NO_1610)
+CV_GOBJCXX	:= 16.1.0-$(REL_NO_1610)
+CV_GFORT	:= 16.1.0-$(REL_NO_1610)
+CV_GGO		:= 16.1.0-$(REL_NO_1610)
+CV_GNAT		:= 16.1.0-$(REL_NO_1610)
+CV_GDC		:= 16.1.0-$(REL_NO_1610)
+CV_GM2		:= 16.1.0-$(REL_NO_1610)
+CV_GCOBOL	:= 16.1.0-$(REL_NO_1610)
+CV_GA68		:= 16.1.0-$(REL_NO_1610)
+CV_BRIG		:= 16.1.0-$(REL_NO_1610)
+CV_OFFL		:= 16.1.0-$(REL_NO_1610)
 
 $(foreach a, $(all_archs), \
   $(foreach v, CV_CPP CV_GCC CV_GPP CV_GOBJC CV_GOBJCXX CV_GFORT CV_GGO CV_GNAT CV_GDC CV_GM2 CV_GCOBOL CV_GA68 CV_BRIG CV_OFFL, \
     $(eval $(v)_$(a) = $(call $(v)))))
 
 ifneq (,$(filter $(DEB_HOST_ARCH), $(gcc15_archs)))
-  CV_CPP		:= 15.2.0-$(REL_NO_1520)
-  CV_GCC		:= 15.2.0-$(REL_NO_1520)
-  CV_GPP		:= 15.2.0-$(REL_NO_1520)
-  CV_GOBJC		:= 15.2.0-$(REL_NO_1520)
-  CV_GOBJCXX		:= 15.2.0-$(REL_NO_1520)
-  CV_GFORT		:= 15.2.0-$(REL_NO_1520)
-  CV_GGO		:= 15.2.0-$(REL_NO_1520)
-  CV_GDC		:= 15.2.0-$(REL_NO_1520)
-  CV_GM2		:= 15.2.0-$(REL_NO_1520)
-  CV_GCOBOL		:= 15.2.0-$(REL_NO_1520)
-  CV_GA68		:= 15.2.0-$(REL_NO_1520)
-  CV_BRIG		:= 15.2.0-$(REL_NO_1520)
-  CV_OFFL		:= 15.2.0-$(REL_NO_1520)
+  CV_CPP		:= 15.3.0-$(REL_NO_1530)
+  CV_GCC		:= 15.3.0-$(REL_NO_1530)
+  CV_GPP		:= 15.3.0-$(REL_NO_1530)
+  CV_GOBJC		:= 15.3.0-$(REL_NO_1530)
+  CV_GOBJCXX		:= 15.3.0-$(REL_NO_1530)
+  CV_GFORT		:= 15.3.0-$(REL_NO_1530)
+  CV_GGO		:= 15.3.0-$(REL_NO_1530)
+  CV_GDC		:= 15.3.0-$(REL_NO_1530)
+  CV_GM2		:= 15.3.0-$(REL_NO_1530)
+  CV_GCOBOL		:= 15.3.0-$(REL_NO_1530)
+  CV_GA68		:= 15.3.0-$(REL_NO_1530)
+  CV_BRIG		:= 15.3.0-$(REL_NO_1530)
+  CV_OFFL		:= 15.3.0-$(REL_NO_1530)
   $(foreach a, $(gcc15_archs), \
     $(foreach v, CV_CPP CV_GCC CV_GPP CV_GOBJC CV_GOBJCXX CV_GFORT CV_GGO CV_GDC CV_GM2 CV_GCOBOL CV_GA68 CV_BRIG CV_OFFL, \
       $(eval $(v)_$(a) = $(call $(v)))))
 endif
 
-ifneq (,$(filter $(DEB_HOST_ARCH), $(gnat14_archs)))
-  CV_GNAT		:= 15.2.0-$(REL_NO_1520)
+ifneq (,$(filter $(DEB_HOST_ARCH), $(gnat15_archs)))
+  CV_GNAT		:= 15.3.0-$(REL_NO_1530)
   $(foreach a, $(gnat14_archs), \
     $(foreach v, CV_GNAT, \
       $(eval $(v)_$(a) = $(call $(v)))))
@@ -384,7 +386,7 @@ hppa64_archs = amd64 hppa i386 x32
 
 m2_archs = alpha arc amd64 arm64 armel armhf i386 loong64 \
 	$(all_archs_mips) \
-	ppc64el riscv64 s390 s390x sparc64
+	powerpc ppc64 ppc64el riscv64 s390 s390x sparc64
 
 mipsen_archs = amd64 i386 x32 mips64el mipsel mips64r6el arm64 ppc64el
 
@@ -546,8 +548,6 @@ invalid_packages = \
 	gdc-m68k-linux-gnu \
 	gdc-sh4-linux-gnu \
 	gdc-multilib-arm-linux-gnueabi \
-	gm2-powerpc-linux-gnu \
-	gm2-powerpc64-linux-gnu \
 	gm2-sh4-linux-gnu \
 
 ifeq ($(with_cross),yes)
@@ -788,7 +788,7 @@ endif
 	    $(if $(and $(filter yes,$(with_cross)),$(filter $(a),$(multilib_archs))), debian/control.cross-ml.in) \
 	    | awk '/^Package: gccgo-(arc|hppa|loongarch64|m68k|sh4)/ {skip=1} skip == 0 {print } /^$$/ && skip == 1 {skip=0}' \
 	    | awk '/^Package: gdc-(alpha|arc|m68k|sh4)/ {skip=1} skip == 0 {print } /^$$/ && skip == 1 {skip=0}' \
-	    | awk '/^Package: gm2-(powerpc|powerpc64|sh4)-/ {skip=1} skip == 0 {print } /^$$/ && skip == 1 {skip=0}' \
+	    | awk '/^Package: gm2-(sh4)-/ {skip=1} skip == 0 {print } /^$$/ && skip == 1 {skip=0}' \
 	    | awk '/^Package: gcobol-(alpha|arc|arm|hppa|i686|loongarch64|m68k|sh4|powerpc|powerpc64|s390|s390x|sh4|sparc|sparc64)-/ {skip=1} skip == 0 {print } /^$$/ && skip == 1 {skip=0}' \
 	    | awk '/^Package: gcobol-(mips|x86-64-gnu|x86-64-linux-gnux32)/ {skip=1} skip == 0 {print } /^$$/ && skip == 1 {skip=0}' \
 	    | sed '/./{H;$$!d};x;/\nArchitecture:\s*\n/d' \
